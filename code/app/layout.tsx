@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Festa do Milhão",
     images: [
       {
-        url: "https://festadomilhao.vercel.app/milhao.png", 
+        url: "/milhao.png", 
         width: 1200,
         height: 630,
         alt: "Banner da Festa do Milhão",
