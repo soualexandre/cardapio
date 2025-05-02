@@ -3,7 +3,22 @@ import { useState } from 'react';
 import { Menu, X, Instagram, Facebook, Phone, MapPin, Clock, ChevronDown, ChevronUp } from 'lucide-react';
 import Image from 'next/image';
 
-const categorias = [
+interface MenuItem {
+  id: number;
+  nome: string;
+  descricao: string;
+  preco: string;
+  imagem: string;
+}
+
+interface Categoria {
+  id: string;
+  nome: string;
+  icone: string;
+  itens: MenuItem[];
+}
+
+const categorias: Categoria[] = [
   {
     id: 'comidas-tipicas',
     nome: 'Comidas Típicas',
@@ -69,20 +84,19 @@ const categorias = [
   }
 ];
 
-
 export default function Cardapio() {
-  const [categoriaAtiva, setCategoriaAtiva] = useState('lanches');
-  const [menuAberto, setMenuAberto] = useState(false);
-  const [categoriasExpandidas, setCategoriasExpandidas] = useState({});
+  const [categoriaAtiva, setCategoriaAtiva] = useState<string>('lanches-tipicos');
+  const [menuAberto, setMenuAberto] = useState<boolean>(false);
+  const [categoriasExpandidas, setCategoriasExpandidas] = useState<Record<string, boolean>>({});
 
-  const toggleCategoria = (id) => {
-    setCategoriasExpandidas(prev => ({
+  const toggleCategoria = (id: string) => {
+    setCategoriasExpandidas((prev) => ({
       ...prev,
       [id]: !prev[id]
     }));
   };
 
-  const scrollToCategoria = (id: any) => {
+  const scrollToCategoria = (id: string) => {
     setCategoriaAtiva(id);
     setMenuAberto(false);
     const element = document.getElementById(id);
@@ -95,17 +109,18 @@ export default function Cardapio() {
         top: offsetPosition,
         behavior: 'smooth'
       });
+    } else {
+      console.warn(`Elemento com id ${id} não encontrado!`);
     }
   };
   
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Cabeçalho */}
       <header className="sticky top-0 z-50 bg-red-600 shadow-md">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center">
-          <Image
+            <Image
               src="/milhao.png"  
               alt="Festa do Milhão Logo"  
               width={60}  
@@ -113,7 +128,6 @@ export default function Cardapio() {
             />
           </div>
           
-          {/* Menu para Mobile */}
           <div className="md:hidden">
             <button 
               onClick={() => setMenuAberto(!menuAberto)}
@@ -124,7 +138,6 @@ export default function Cardapio() {
             </button>
           </div>
           
-          {/* Menu para Desktop */}
           <nav className="hidden md:flex space-x-4">
             {categorias.map((categoria) => (
               <button
@@ -140,7 +153,6 @@ export default function Cardapio() {
           </nav>
         </div>
         
-        {/* Menu Mobile Expandido */}
         {menuAberto && (
           <div className="md:hidden bg-red-700 py-1 shadow-lg">
             <div className="container mx-auto">
@@ -160,7 +172,6 @@ export default function Cardapio() {
         )}
       </header>
 
-      {/* Banner Principal */}
       <section className="bg-gradient-to-b from-red-600 to-red-700 py-8">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Festa do Milhão</h1>
@@ -194,7 +205,7 @@ export default function Cardapio() {
 
       <main className="container mx-auto px-4 py-6">
         {categorias.map((categoria) => {
-          const expanded = categoriasExpandidas[categoria.id] !== false; 
+          const expanded = categoriasExpandidas[categoria.id] !== false;
           
           return (
             <section 
@@ -284,7 +295,6 @@ export default function Cardapio() {
         </div>
       </section>
 
-      {/* Rodapé */}
       <footer className="bg-red-800 text-white py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
