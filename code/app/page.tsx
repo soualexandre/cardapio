@@ -68,13 +68,20 @@ const categorias: Categoria[] = [
     itens: [
       {
         id: 5,
-        nome: 'Jantinha',
+        nome: 'Galinha Caipira',
         descricao: 'Espetinho, arroz, feijão tropeiro, mandioca e vinagrete',
-        preco: 'R$ 25,00',
-        imagem: '/jantinha.jpg'
+        preco: 'R$ 20,00',
+        imagem: '/caipira.jpg'
       },
       {
         id: 6,
+        nome: 'Carne de Porco na Lata',
+        descricao: 'Espetinho, arroz, feijão tropeiro, mandioca e vinagrete',
+        preco: 'R$ 20,00',
+        imagem: '/lata.jpg'
+      },
+      {
+        id: 7,
         nome: 'Caldo de Frango',
         descricao: 'Caldo quente feito com frango desfiado, batata e temperos',
         preco: 'R$ 10,00',
