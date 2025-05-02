@@ -14,8 +14,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Festa do Milhão",
-  description: "Festival Gastronômico Cristão",
+  description: "Cardápio da festa do Milhão - Festival Gastronômico Cristão em Paraíso do Tocantins",
+  openGraph: {
+    title: "Festa do Milhão",
+    description: "Cardápio da festa do Milhão - Festival Gastronômico Cristão em Paraíso do Tocantins",
+    url: "https://festadomilhao.vercel.app", 
+    siteName: "Festa do Milhão",
+    images: [
+      {
+        url: "https://festadomilhao.vercel.app/milhao.png", 
+        width: 1200,
+        height: 630,
+        alt: "Banner da Festa do Milhão",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
 };
+
 
 export default function RootLayout({
   children,
