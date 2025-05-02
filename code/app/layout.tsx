@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Festa do Milhão",
   description: "Cardápio da festa do Milhão - Festival Gastronômico Cristão em Paraíso do Tocantins",
+  icons: {
+    icon: "/milhao.png", 
+  },
   openGraph: {
     title: "Festa do Milhão",
     description: "Cardápio da festa do Milhão - Festival Gastronômico Cristão em Paraíso do Tocantins",
@@ -32,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-//comment
+
 
 export default function RootLayout({
   children,
