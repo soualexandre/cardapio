@@ -24,72 +24,61 @@ const categorias: Categoria[] = [
     nome: 'Comidas Típicas',
     icone: '🌽',
     itens: [
-      {
-        id: 1,
-        nome: 'Pamonha',
-        descricao: 'Pasta de milho verde cozida na palha, doce ou salgada',
-        preco: 'R$ 10,00',
-        imagem: '/pamonha.jpg'
-      },
-      {
-        id: 2,
-        nome: 'Canjica',
-        descricao: 'Milho branco cozido com leite, açúcar e canela',
-        preco: 'R$ 8,00',
-        imagem: '/canjica.jpg'
-      },
-      {
-        id: 3,
-        nome: 'Curau',
-        descricao: 'Doce cremoso de milho com leite e açúcar, polvilhado com canela',
-        preco: 'R$ 6,00',
-        imagem: '/cural.jpg'
-      }
+      { id: 1, nome: 'Pamonha', descricao: '', preco: 'R$ 10,00', imagem: '/pamonha.jpg' },
+      { id: 2, nome: 'Bolo frito (4 Un)', descricao: '', preco: 'R$ 10,00', imagem: '/bolo-frito.png' },
+      { id: 3, nome: 'Curau (200 Ml)', descricao: '', preco: 'R$ 8,00', imagem: '/cural.jpg' },
+      { id: 4, nome: 'Canjica (200 Ml)', descricao: '', preco: 'R$ 6,00', imagem: '/canjica.jpg' },
+      { id: 5, nome: 'Milho Cozido', descricao: '', preco: 'R$ 3,00', imagem: '/milho_cozido.jpg' },
+      { id: 6, nome: 'Caldo de Frango (300 Ml)', descricao: '', preco: 'R$ 10,00', imagem: '/caldo.jpg' },
+      { id: 7, nome: 'Pipoca', descricao: '', preco: 'R$ 4,00', imagem: '/pipoca.jpg' },
+      { id: 8, nome: 'Algodão Doce', descricao: '', preco: 'R$ 4,00', imagem: '/algodao.jpg' }
     ]
   },
   {
-    id: 'lanches-tipicos',
-    nome: 'Lanches Típicos',
-    icone: '🍩',
-    itens: [
-      {
-        id: 4,
-        nome: 'Bolo Frito',
-        descricao: 'Bolo frito tradicional, crocante por fora e macio por dentro',
-        preco: 'R$ 8,00',
-        imagem: '/bolo-frito.png'
-      }
-    ]
-  },
-  {
-    id: 'refeicoes',
-    nome: 'Refeições',
+    id: 'jantas',
+    nome: 'Jantas',
     icone: '🍽️',
     itens: [
-      {
-        id: 5,
-        nome: 'Galinha Caipira',
-        descricao: 'Espetinho, arroz, feijão tropeiro, mandioca e vinagrete',
-        preco: 'R$ 20,00',
-        imagem: '/caipira.jpg'
-      },
-      {
-        id: 6,
-        nome: 'Carne de Porco na Lata',
-        descricao: 'Espetinho, arroz, feijão tropeiro, mandioca e vinagrete',
-        preco: 'R$ 20,00',
-        imagem: '/lata.jpg'
-      },
-      {
-        id: 7,
-        nome: 'Caldo de Frango',
-        descricao: 'Caldo quente feito com frango desfiado, batata e temperos',
-        preco: 'R$ 10,00',
-        imagem: '/caldo.jpg'
-      }
+      { id: 9, nome: 'Galinha Caipira', descricao: '', preco: 'R$ 22,00', imagem: '/caipira.jpg' },
+      { id: 10, nome: 'Porco na Lata', descricao: '', preco: 'R$ 22,00', imagem: '/lata.jpg' },
+    ]
+  },
+  {
+    id: 'sobremesas',
+    nome: 'Sobremesas',
+    icone: '🍨',
+    itens: [
+      { id: 12, nome: 'Picolé Fruta', descricao: '', preco: 'R$ 5,00', imagem: '/picole.jpeg' },
+      { id: 13, nome: 'Picolé Creme', descricao: '', preco: 'R$ 7,00', imagem: '/picole_creme.jpg' }
+    ]
+  },
+  {
+    id: 'bebidas',
+    nome: 'Bebidas',
+    icone: '🥤',
+    itens: [
+      { id: 14, nome: 'Água', descricao: '', preco: 'R$ 4,00', imagem: '/agua.jpg' },
+      { id: 15, nome: 'Água com gás', descricao: '', preco: 'R$ 5,00', imagem: '/com_gas.jpg' },
+      { id: 16, nome: 'Coca-cola (1 L)', descricao: '', preco: 'R$ 12,00', imagem: '/coca.jpg' },
+      { id: 17, nome: 'Guaraná (1 L)', descricao: '', preco: 'R$ 10,00', imagem: '/guarana.jpg' },
+      { id: 18, nome: 'Suco (400 Ml)', descricao: '', preco: 'R$ 8,00', imagem: '/suco.jpg' },
+      { id: 19, nome: 'Batida', descricao: '', preco: 'R$ 10,00', imagem: '/batida.jpg' }
+    ]
+  },
+  {
+    id: 'brincadeiras',
+    nome: 'Brincadeiras',
+    icone: '🎯',
+    itens: [
+      { id: 20, nome: 'Tiro ao alvo', descricao: '', preco: 'R$ 5,00', imagem: '/alvo.jpg' },
+      { id: 21, nome: 'Pescaria', descricao: '', preco: 'R$ 5,00', imagem: '/pesca.jpg' },
+      { id: 22, nome: 'Gira a sorte', descricao: '', preco: 'R$ 5,00', imagem: '/sorte.jpeg' },
+      { id: 23, nome: 'Brinquedos Infláveis', descricao: '', preco: 'R$ 5,00', imagem: '/inflavel.png' },
+      { id: 24, nome: 'Touro Mecânico', descricao: '', preco: 'R$ 6,00', imagem: '/touro.jpg' }
     ]
   }
 ];
+
 
 export default function Cardapio() {
   const [categoriaAtiva, setCategoriaAtiva] = useState<string>('lanches-tipicos');
