@@ -25,7 +25,7 @@ const categorias: Categoria[] = [
     icone: '🌽',
     itens: [
       { id: 1, nome: 'Pamonha', descricao: '', preco: 'R$ 10,00', imagem: '/pamonha.jpg' },
-      { id: 2, nome: 'Bolo frito (4 Un)', descricao: '', preco: 'R$ 10,00', imagem: '/bolo-frito.png' },
+      { id: 2, nome: 'Bolo Frito (4 Un)', descricao: '', preco: 'R$ 10,00', imagem: '/bolo-frito.png' },
       { id: 3, nome: 'Curau (200 Ml)', descricao: '', preco: 'R$ 8,00', imagem: '/cural.jpg' },
       { id: 4, nome: 'Canjica (200 Ml)', descricao: '', preco: 'R$ 6,00', imagem: '/canjica.jpg' },
       { id: 5, nome: 'Milho Cozido', descricao: '', preco: 'R$ 3,00', imagem: '/milho_cozido.jpg' },
@@ -58,7 +58,7 @@ const categorias: Categoria[] = [
     icone: '🥤',
     itens: [
       { id: 14, nome: 'Água', descricao: '', preco: 'R$ 4,00', imagem: '/agua.jpg' },
-      { id: 15, nome: 'Água com gás', descricao: '', preco: 'R$ 5,00', imagem: '/com_gas.jpg' },
+      { id: 15, nome: 'Água com Gás', descricao: '', preco: 'R$ 5,00', imagem: '/com_gas.jpg' },
       { id: 16, nome: 'Coca-cola (1 L)', descricao: '', preco: 'R$ 12,00', imagem: '/coca.jpg' },
       { id: 17, nome: 'Guaraná (1 L)', descricao: '', preco: 'R$ 10,00', imagem: '/guarana.jpg' },
       { id: 18, nome: 'Suco (400 Ml)', descricao: '', preco: 'R$ 8,00', imagem: '/suco.jpg' },
@@ -70,9 +70,9 @@ const categorias: Categoria[] = [
     nome: 'Brincadeiras',
     icone: '🎯',
     itens: [
-      { id: 20, nome: 'Tiro ao alvo', descricao: '', preco: 'R$ 5,00', imagem: '/alvo.jpg' },
+      { id: 20, nome: 'Tiro ao Alvo', descricao: '', preco: 'R$ 5,00', imagem: '/alvo.jpg' },
       { id: 21, nome: 'Pescaria', descricao: '', preco: 'R$ 5,00', imagem: '/pesca.jpg' },
-      { id: 22, nome: 'Gira a sorte', descricao: '', preco: 'R$ 5,00', imagem: '/sorte.jpeg' },
+      { id: 22, nome: 'Gira a Sorte', descricao: '', preco: 'R$ 5,00', imagem: '/sorte.jpeg' },
       { id: 23, nome: 'Brinquedos Infláveis', descricao: '', preco: 'R$ 5,00', imagem: '/inflavel.png' },
       { id: 24, nome: 'Touro Mecânico', descricao: '', preco: 'R$ 6,00', imagem: '/touro.jpg' }
     ]
