@@ -27,7 +27,7 @@ const categorias: Categoria[] = [
       { id: 1, nome: 'Pamonha', descricao: '', preco: 'R$ 10,00', imagem: '/pamonha.jpg' },
       { id: 2, nome: 'Bolo Frito (4 Un)', descricao: '', preco: 'R$ 10,00', imagem: '/bolo-frito.png' },
       { id: 3, nome: 'Curau (200 Ml)', descricao: '', preco: 'R$ 8,00', imagem: '/cural.jpg' },
-      { id: 4, nome: 'Canjica (200 Ml)', descricao: '', preco: 'R$ 6,00', imagem: '/canjica.jpg' },
+      { id: 4, nome: 'Canjica (200 Ml)', descricao: '', preco: 'R$ 8,00', imagem: '/canjica.jpg' },
       { id: 5, nome: 'Milho Cozido', descricao: '', preco: 'R$ 3,00', imagem: '/milho_cozido.jpg' },
       { id: 6, nome: 'Caldo de Frango (300 Ml)', descricao: '', preco: 'R$ 10,00', imagem: '/caldo.jpg' },
       { id: 7, nome: 'Pipoca', descricao: '', preco: 'R$ 4,00', imagem: '/pipoca.jpg' },
@@ -75,7 +75,7 @@ const categorias: Categoria[] = [
       { id: 21, nome: 'Pescaria', descricao: '', preco: 'R$ 5,00', imagem: '/pesca.jpg' },
       { id: 22, nome: 'Gira a Sorte', descricao: '', preco: 'R$ 5,00', imagem: '/sorte.jpeg' },
       { id: 23, nome: 'Brinquedos Infláveis', descricao: '', preco: 'R$ 5,00', imagem: '/inflavel.png' },
-      { id: 24, nome: 'Touro Mecânico', descricao: '', preco: 'R$ 8,00', imagem: '/touro.jpg' }
+      { id: 24, nome: 'Touro Mecânico', descricao: '', preco: 'R$ 10,00', imagem: '/touro.jpg' }
     ]
   }
 ];
