@@ -237,7 +237,7 @@ export default function Cardapio() {
                         <div className="p-3">
                           <div className="flex justify-between items-start">
                             <h3 className="text-sm font-bold text-gray-800 leading-tight">{item.nome}</h3>
-                            <span className="text-sm font-bold text-red-600 ml-1">{item.preco}</span>
+                            {/* <span className="text-sm font-bold text-red-600 ml-1">{item.preco}</span> */}
                           </div>
                           <p className="text-xs text-gray-600 mt-1 line-clamp-2">{item.descricao}</p>
                         </div>
