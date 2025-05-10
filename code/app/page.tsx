@@ -73,7 +73,7 @@ const categorias: Categoria[] = [
     itens: [
       { id: 20, nome: 'Tiro ao Alvo', descricao: '', preco: 'R$ 5,00', imagem: '/alvo.jpg' },
       { id: 21, nome: 'Pescaria', descricao: '', preco: 'R$ 5,00', imagem: '/pesca.jpg' },
-      { id: 22, nome: 'Giro da fé', descricao: '', preco: 'R$ 5,00', imagem: '/sorte.jpeg' },
+      { id: 22, nome: 'Giro da Fé', descricao: '', preco: 'R$ 5,00', imagem: '/sorte.jpeg' },
       { id: 23, nome: 'Brinquedos Infláveis', descricao: '', preco: 'R$ 5,00', imagem: '/inflavel.png' },
       { id: 24, nome: 'Touro Mecânico', descricao: '', preco: 'R$ 10,00', imagem: '/touro.jpg' }
     ]
