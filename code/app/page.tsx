@@ -41,7 +41,7 @@ const categorias: Categoria[] = [
     itens: [
       { id: 9, nome: 'Galinha Caipira', descricao: '', preco: 'R$ 22,00', imagem: '/caipira.jpg' },
       { id: 10, nome: 'Porco na Lata', descricao: '', preco: 'R$ 22,00', imagem: '/lata.jpg' },
-      { id: 10, nome: 'Carne de Panela', descricao: '', preco: 'R$ 22,00', imagem: '/lata.jpg' },
+      { id: 10, nome: 'Carne de Panela', descricao: '', preco: 'R$ 22,00', imagem: '/panela.jpg' },
     ]
   },
   {
