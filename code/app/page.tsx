@@ -41,6 +41,7 @@ const categorias: Categoria[] = [
     itens: [
       { id: 9, nome: 'Galinha Caipira', descricao: '', preco: 'R$ 22,00', imagem: '/caipira.jpg' },
       { id: 10, nome: 'Porco na Lata', descricao: '', preco: 'R$ 22,00', imagem: '/lata.jpg' },
+      { id: 10, nome: 'Carne de Panela', descricao: '', preco: 'R$ 22,00', imagem: '/lata.jpg' },
     ]
   },
   {
@@ -74,7 +75,7 @@ const categorias: Categoria[] = [
       { id: 21, nome: 'Pescaria', descricao: '', preco: 'R$ 5,00', imagem: '/pesca.jpg' },
       { id: 22, nome: 'Gira a Sorte', descricao: '', preco: 'R$ 5,00', imagem: '/sorte.jpeg' },
       { id: 23, nome: 'Brinquedos Infláveis', descricao: '', preco: 'R$ 5,00', imagem: '/inflavel.png' },
-      { id: 24, nome: 'Touro Mecânico', descricao: '', preco: 'R$ 6,00', imagem: '/touro.jpg' }
+      { id: 24, nome: 'Touro Mecânico', descricao: '', preco: 'R$ 8,00', imagem: '/touro.jpg' }
     ]
   }
 ];
@@ -237,7 +238,7 @@ export default function Cardapio() {
                         <div className="p-3">
                           <div className="flex justify-between items-start">
                             <h3 className="text-sm font-bold text-gray-800 leading-tight">{item.nome}</h3>
-                            {/* <span className="text-sm font-bold text-red-600 ml-1">{item.preco}</span> */}
+                            <span className="text-sm font-bold text-red-600 ml-1">{item.preco}</span>
                           </div>
                           <p className="text-xs text-gray-600 mt-1 line-clamp-2">{item.descricao}</p>
                         </div>
