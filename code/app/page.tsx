@@ -62,7 +62,7 @@ const categorias: Categoria[] = [
       { id: 15, nome: 'Água com Gás', descricao: '', preco: 'R$ 5,00', imagem: '/com_gas.jpg' },
       { id: 16, nome: 'Coca-cola (1 L)', descricao: '', preco: 'R$ 12,00', imagem: '/coca.jpg' },
       { id: 17, nome: 'Guaraná (1 L)', descricao: '', preco: 'R$ 10,00', imagem: '/guarana.jpg' },
-      { id: 18, nome: 'Suco (400 Ml)', descricao: '', preco: 'R$ 8,00', imagem: '/suco.jpg' },
+      { id: 18, nome: 'Suco (400 Ml)', descricao: '', preco: 'R$ 10,00', imagem: '/suco.jpg' },
       { id: 19, nome: 'Batida', descricao: '', preco: 'R$ 10,00', imagem: '/batida.jpg' }
     ]
   },
