@@ -208,7 +208,6 @@ export default function Cardapio() {
             </button>
           </nav>
 
-          {/* Mobile hamburger */}
           <button
             onClick={() => setMenuAberto(!menuAberto)}
             className="md:hidden flex-shrink-0 text-white p-2 rounded-xl hover:bg-white/20 transition-colors"
