@@ -193,7 +193,6 @@ export default function Cardapio() {
             </div>
           </div>
 
-          {/* Desktop nav — atalhos informativos sem duplicar categorias */}
           <nav className="hidden md:flex items-center gap-2">
             <button
               onClick={() => scrollToSection('sobre-festa')}
