@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { Instagram, Facebook, Phone, MapPin, Clock, Menu, X, ChevronDown, ChevronUp, Star } from 'lucide-react';
+import { Instagram, Facebook, Phone, MapPin, Clock, Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface MenuItem {
   id: number;
