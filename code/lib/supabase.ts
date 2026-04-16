@@ -40,5 +40,5 @@ export function createAdminClient() {
     throw new Error('SUPABASE_SECRET_KEY não configurada')
   }
   console.log('[Supabase] createAdminClient criado com sucesso')
-  return createClient(supabaseUrl, secretKey)
+  return createClient(supabaseUrl!, secretKey)
 }

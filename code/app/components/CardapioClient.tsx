@@ -182,7 +182,7 @@ export default function CardapioClient({ categorias: initialCategorias }: { cate
               <MapPin size={20} className="text-yellow-300" />
               <div className="text-left">
                 <p className="font-semibold">Local & Data</p>
-                <p className="text-amber-200 text-xs">10 de Maio · 19h às 00h</p>
+                <p className="text-amber-200 text-xs">09 de Maio · 19h às 00h</p>
               </div>
             </button>
           </div>
@@ -208,7 +208,7 @@ export default function CardapioClient({ categorias: initialCategorias }: { cate
         <div className="relative container mx-auto px-4 py-10 text-center max-w-2xl">
           <div className="inline-flex items-center gap-2 glass-pill text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-5">
             <Clock size={13} />
-            10 de Maio · Sábado · 19h às 00h
+            09 de Maio · Sábado · 19h às 30h
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-white leading-none mb-2 drop-shadow-lg">
             🌽 Festa do
@@ -219,11 +219,14 @@ export default function CardapioClient({ categorias: initialCategorias }: { cate
           >
             Milhão
           </h1>
-          <p className="text-amber-100 text-base md:text-lg font-medium mb-1">
-            Festival Gastronômico Cristão
+          <p className="text-amber-100 text-base md:text-lg font-bold mb-1">
+            Uma noite de fé, sabor e celebração
           </p>
-          <p className="text-amber-200/80 text-sm mb-8">
+          <p className="text-amber-200/80 text-sm mb-2">
             UMADEP · Igreja Assembléia de Deus — CIADSETA · Paraíso do Tocantins
+          </p>
+          <p className="text-amber-300/90 text-xs font-medium mb-8 max-w-sm mx-auto leading-relaxed">
+            Milhares de pessoas reunidas pelo que realmente importa — venha fazer parte dessa história.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <div className="glass-pill rounded-2xl px-5 py-3 text-center min-w-[120px]">
@@ -232,11 +235,15 @@ export default function CardapioClient({ categorias: initialCategorias }: { cate
             </div>
             <div className="glass-pill rounded-2xl px-5 py-3 text-center min-w-[120px]">
               <Clock size={18} className="mx-auto mb-1.5 text-yellow-300" />
-              <p className="text-white text-xs font-semibold leading-tight">19h às 00h<br />10 de Maio</p>
+              <p className="text-white text-xs font-semibold leading-tight">19h às 00h<br />09 de Maio</p>
             </div>
             <div className="glass-pill rounded-2xl px-5 py-3 text-center min-w-[120px]">
               <span className="text-2xl block mb-1">✝️</span>
-              <p className="text-white text-xs font-semibold leading-tight">Para toda<br />a família</p>
+              <p className="text-white text-xs font-semibold leading-tight">Fé &<br />Evangelismo</p>
+            </div>
+            <div className="glass-pill rounded-2xl px-5 py-3 text-center min-w-[120px]">
+              <span className="text-2xl block mb-1">👨‍👩‍👧‍👦</span>
+              <p className="text-white text-xs font-semibold leading-tight">Toda a<br />família</p>
             </div>
           </div>
         </div>
@@ -336,44 +343,79 @@ export default function CardapioClient({ categorias: initialCategorias }: { cate
       </main>
 
       {/* ── EVENT INFO ───────────────────────────────────────── */}
-      <section id="sobre-festa" className="py-12 px-4" style={{ background: 'linear-gradient(180deg, #FFFBEB, #FEF3C7)' }}>
+      <section id="sobre-festa" className="py-14 px-4" style={{ background: 'linear-gradient(180deg, #FFFBEB, #FEF3C7)' }}>
         <div className="container mx-auto max-w-2xl">
-          <div className="text-center mb-7">
-            <h2 className="text-2xl font-extrabold text-amber-900">Sobre o Evento</h2>
+          <div className="text-center mb-8">
+            <span className="inline-block text-3xl mb-3">✝️</span>
+            <h2 className="text-2xl font-extrabold text-amber-900">Sobre a Festa do Milhão</h2>
             <div className="w-16 h-1 rounded-full mx-auto mt-2" style={{ background: '#D97706' }} />
           </div>
-          <div className="bg-white rounded-3xl shadow-lg border border-amber-100 overflow-hidden">
+
+          <div className="bg-white rounded-3xl shadow-lg border border-amber-100 overflow-hidden mb-5">
             <div className="h-2" style={{ background: 'linear-gradient(90deg, #D97706, #F59E0B, #FBBF24)' }} />
-            <div className="p-6 md:p-8">
-              <p className="text-gray-700 text-sm leading-relaxed mb-6">
-                A <strong className="text-amber-700">Festa do Milhão</strong> é um festival gastronômico cristão
-                organizado pela juventude UMADEP da Igreja Assembléia de Deus — CIADSETA,
-                com o objetivo de promover adoração a Deus, comunhão e diversão para toda a família.
-                O evento traz música ao vivo, brincadeiras, atividades para todas as idades
-                e muitas comidas típicas deliciosas em um ambiente acolhedor e festivo.
+            <div className="p-6 md:p-8 space-y-4">
+              <p className="text-gray-800 text-sm leading-relaxed font-medium">
+                Há anos, o segundo sábado de maio se transforma em algo único em Paraíso do Tocantins.{' '}
+                <strong className="text-amber-700">Milhares de pessoas</strong> se reúnem não apenas pelo sabor
+                inconfundível das comidas típicas ou pela alegria das brincadeiras — mas movidas por algo
+                muito maior: a <strong className="text-amber-700">fé que une, a Palavra que transforma</strong> e
+                o amor que celebra a vida.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-start gap-4 bg-amber-50 rounded-2xl p-4 border border-amber-100">
-                  <div className="flex-shrink-0 p-2.5 rounded-xl text-white" style={{ background: '#D97706' }}>
-                    <Clock size={20} />
+              <p className="text-gray-700 text-sm leading-relaxed">
+                A <strong className="text-amber-700">Festa do Milhão</strong> é um ato evangelístico organizado
+                pela juventude <strong className="text-amber-700">UMADEP</strong> da Igreja Assembléia de Deus —
+                CIADSETA. Cada prato saboreado, cada risada compartilhada, cada momento vivido aqui é também
+                um convite: <em className="text-amber-800">venha conhecer o Deus que transforma vidas.</em>
+              </p>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Mais do que um festival gastronômico, é uma{' '}
+                <strong className="text-amber-700">experiência de comunhão genuína</strong>. Música ao vivo,
+                comidas típicas feitas com dedicação e carinho, atrações para crianças, jovens e adultos —
+                tudo isso em um ambiente acolhedor, festivo e marcado pela presença de Deus. Uma noite que
+                fica na memória e no coração de quem participa.
+              </p>
+
+              {/* Destaques */}
+              <div className="grid grid-cols-3 gap-3 pt-2">
+                {[
+                  { emoji: '🌽', label: 'Comidas típicas feitas na hora' },
+                  { emoji: '🎵', label: 'Música ao vivo a noite toda' },
+                  { emoji: '🎯', label: 'Brincadeiras para todas as idades' },
+                ].map(d => (
+                  <div key={d.label} className="bg-amber-50 border border-amber-100 rounded-2xl p-3 text-center">
+                    <span className="text-xl block mb-1">{d.emoji}</span>
+                    <p className="text-amber-900 text-[11px] font-semibold leading-tight">{d.label}</p>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-amber-900 mb-0.5">Data e Horário</h4>
-                    <p className="text-gray-700 text-sm font-semibold">Sábado, 10 de Maio</p>
-                    <p className="text-gray-500 text-sm">Das 19h às 00h</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4 bg-amber-50 rounded-2xl p-4 border border-amber-100">
-                  <div className="flex-shrink-0 p-2.5 rounded-xl text-white" style={{ background: '#D97706' }}>
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-amber-900 mb-0.5">Localização</h4>
-                    <p className="text-gray-700 text-sm font-semibold">Tatersal do Sindicato Rural</p>
-                    <p className="text-gray-500 text-sm">Parque de Exposições Agropecuária</p>
-                    <p className="text-gray-500 text-sm">Bueno — Paraíso do Tocantins, TO</p>
-                  </div>
-                </div>
+                ))}
+              </div>
+
+              <p className="text-center text-amber-700 text-sm font-bold pt-1">
+                Venha com sua família. Traga seus amigos.<br />
+                <span className="text-amber-500">Esta festa foi feita para você.</span>
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="flex items-start gap-4 bg-white rounded-2xl p-4 border border-amber-100 shadow-sm">
+              <div className="flex-shrink-0 p-2.5 rounded-xl text-white" style={{ background: '#D97706' }}>
+                <Clock size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold text-amber-900 mb-0.5">Data e Horário</h4>
+                <p className="text-gray-700 text-sm font-semibold">Sábado, 09 de Maio</p>
+                <p className="text-gray-500 text-sm">Das 19h às 00h — não perca!</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4 bg-white rounded-2xl p-4 border border-amber-100 shadow-sm">
+              <div className="flex-shrink-0 p-2.5 rounded-xl text-white" style={{ background: '#D97706' }}>
+                <MapPin size={20} />
+              </div>
+              <div>
+                <h4 className="font-bold text-amber-900 mb-0.5">Localização</h4>
+                <p className="text-gray-700 text-sm font-semibold">Tatersal do Sindicato Rural</p>
+                <p className="text-gray-500 text-sm">Parque de Exposições Agropecuária</p>
+                <p className="text-gray-500 text-sm">Bueno — Paraíso do Tocantins, TO</p>
               </div>
             </div>
           </div>
@@ -385,8 +427,11 @@ export default function CardapioClient({ categorias: initialCategorias }: { cate
         <div className="container mx-auto max-w-2xl text-center">
           <img src="/milhao.png" alt="Festa do Milhão" className="h-14 mx-auto mb-4 object-contain opacity-90 drop-shadow-md" />
           <h3 className="text-xl font-extrabold mb-1" style={{ color: '#FDE68A' }}>Festa do Milhão</h3>
-          <p className="text-amber-200 text-sm mb-1">Festival Gastronômico Cristão</p>
-          <p className="text-amber-300/70 text-xs mb-7">Igreja Assembléia de Deus — CIADSETA · Paraíso do Tocantins</p>
+          <p className="text-amber-200 text-sm mb-1">Uma noite de fé, sabor e celebração</p>
+          <p className="text-amber-300/80 text-xs mb-3 max-w-xs mx-auto leading-relaxed">
+            Um encontro que move milhares de corações todo ano. Venha ser parte disso.
+          </p>
+          <p className="text-amber-300/60 text-xs mb-7">UMADEP · Igreja Assembléia de Deus — CIADSETA · Paraíso do Tocantins</p>
           <div className="flex justify-center gap-4 mb-8">
             {[
               { icon: <Instagram size={20} className="text-amber-100" />, label: 'Instagram' },
