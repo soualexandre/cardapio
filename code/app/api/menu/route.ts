@@ -4,6 +4,7 @@ import { prisma } from '@/lib/prisma'
 
 export async function GET() {
   try {
+    console.log('[API /api/menu][GET] Buscando categorias...')
     const categorias = await prisma.categoria.findMany({
       include: {
         itens: {
@@ -13,21 +14,33 @@ export async function GET() {
       },
       orderBy: { ordem: 'asc' },
     })
+    console.log('[API /api/menu][GET] Categorias encontradas', {
+      totalCategorias: categorias.length,
+      totalItens: categorias.reduce((acc, cat) => acc + cat.itens.length, 0),
+    })
     return NextResponse.json(categorias)
   } catch (error) {
-    console.error(error)
+    console.error('[API /api/menu][GET] Erro ao buscar cardápio:', error)
     return NextResponse.json({ error: 'Erro ao buscar cardápio' }, { status: 500 })
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
+    console.log('[API /api/menu][POST] Recebendo criação de item...')
     const body = await request.json()
     const { nome, descricao, preco, imagem, categoriaId, ordem } = body
 
     if (!nome || !preco || !categoriaId) {
       return NextResponse.json({ error: 'Nome, preço e categoria são obrigatórios' }, { status: 400 })
     }
+
+    console.log('[API /api/menu][POST] Dados recebidos', {
+      nome,
+      categoriaId,
+      hasImagem: !!imagem,
+      ordem,
+    })
 
     const item = await prisma.menuItem.create({
       data: {
@@ -41,9 +54,15 @@ export async function POST(request: NextRequest) {
       include: { categoria: true },
     })
 
+    console.log('[API /api/menu][POST] Item criado com sucesso', {
+      id: item.id,
+      nome: item.nome,
+      categoriaId: item.categoriaId,
+    })
+
     return NextResponse.json(item, { status: 201 })
   } catch (error) {
-    console.error(error)
+    console.error('[API /api/menu][POST] Erro ao criar item:', error)
 
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       // ID duplicado (sequência fora de sincronia / registro já existe)
