@@ -74,6 +74,17 @@ async function main() {
     })
   }
   console.log('✅ Itens criados:', itens.length)
+
+  // Garante que a sequência de autoincremento do ID de MenuItem
+  // fique posicionada depois do maior ID já existente, evitando P2002 em `id`
+  await prisma.$executeRawUnsafe(`
+    SELECT setval(
+      pg_get_serial_sequence('"MenuItem"', 'id'),
+      COALESCE((SELECT MAX(id) FROM "MenuItem"), 0) + 1,
+      false
+    );
+  `)
+  console.log('✅ Sequência de ID de MenuItem ajustada')
   console.log('🎉 Seed concluído com sucesso!')
 }
 

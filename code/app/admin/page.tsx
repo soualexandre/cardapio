@@ -51,6 +51,11 @@ export default function AdminPage() {
   const [catSaving, setCatSaving] = useState(false)
   const [catError, setCatError] = useState('')
 
+  // Delete category — picker + confirm
+  const [deleteCatModalOpen, setDeleteCatModalOpen] = useState(false)
+  const [deleteCat, setDeleteCat] = useState<Categoria | null>(null)
+  const [deletingCat, setDeletingCat] = useState(false)
+
   useEffect(() => { loadData() }, [])
 
   async function loadData() {
@@ -192,6 +197,28 @@ export default function AdminPage() {
     }
   }
 
+  function openDeleteCatModal() {
+    setDeleteCat(null)
+    setDeleteCatModalOpen(true)
+  }
+
+  async function handleDeleteCat() {
+    if (!deleteCat) return
+    setDeletingCat(true)
+    try {
+      await fetch(`/api/categorias/${deleteCat.id}`, { method: 'DELETE' })
+      setDeleteCatModalOpen(false)
+      setDeleteCat(null)
+      const next = categorias.find(c => c.id !== deleteCat.id)
+      setCatAtiva(next?.id ?? '')
+      await loadData()
+    } catch (e) {
+      console.error(e)
+    } finally {
+      setDeletingCat(false)
+    }
+  }
+
   // ── Render ────────────────────────────────────────────────────
 
   const currentCat = categorias.find(c => c.id === catAtiva)
@@ -262,9 +289,15 @@ export default function AdminPage() {
               ))}
               <button
                 onClick={() => { setCatForm({ id: '', nome: '', icone: '' }); setCatModalOpen(true) }}
-                className="flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap bg-dashed border-2 border-dashed border-gray-300 text-gray-400 hover:border-amber-400 hover:text-amber-500 transition-colors"
+                className="flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap border-2 border-dashed border-gray-300 text-gray-400 hover:border-amber-400 hover:text-amber-500 transition-colors"
               >
                 <Plus size={14} /> Nova categoria
+              </button>
+              <button
+                onClick={openDeleteCatModal}
+                className="flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap border-2 border-dashed border-gray-300 text-red-400 hover:border-red-400 hover:text-red-500 transition-colors"
+              >
+                <Trash2 size={14} /> Excluir categoria
               </button>
             </div>
             <button
@@ -548,6 +581,90 @@ export default function AdminPage() {
               >
                 {deleting ? 'Excluindo...' : 'Excluir'}
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Delete Category Modal (picker + confirm) ── */}
+      {deleteCatModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md">
+            <div className="flex items-center justify-between p-6 pb-4 border-b border-gray-100">
+              <div>
+                <h2 className="text-lg font-bold text-gray-800">Excluir categoria</h2>
+                <p className="text-xs text-gray-400 mt-0.5">Selecione a categoria que deseja remover</p>
+              </div>
+              <button
+                onClick={() => { setDeleteCatModalOpen(false); setDeleteCat(null) }}
+                className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                <X size={18} className="text-gray-500" />
+              </button>
+            </div>
+
+            {/* Category picker */}
+            <div className="p-4 space-y-2 max-h-72 overflow-y-auto">
+              {categorias.map(cat => {
+                const selected = deleteCat?.id === cat.id
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setDeleteCat(selected ? null : cat)}
+                    className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl border-2 transition-all text-left ${
+                      selected
+                        ? 'border-red-400 bg-red-50'
+                        : 'border-gray-100 bg-gray-50 hover:border-gray-300 hover:bg-gray-100'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">{cat.icone}</span>
+                      <div>
+                        <p className={`text-sm font-bold ${selected ? 'text-red-700' : 'text-gray-700'}`}>
+                          {cat.nome}
+                        </p>
+                        <p className="text-xs text-gray-400">
+                          {cat.itens.length === 0
+                            ? 'Nenhum item'
+                            : `${cat.itens.length} ${cat.itens.length === 1 ? 'item' : 'itens'} serão excluídos`}
+                        </p>
+                      </div>
+                    </div>
+                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${
+                      selected ? 'border-red-500 bg-red-500' : 'border-gray-300'
+                    }`}>
+                      {selected && <span className="text-white text-xs font-bold">✓</span>}
+                    </div>
+                  </button>
+                )
+              })}
+            </div>
+
+            {/* Warning + confirm */}
+            <div className="p-4 pt-0">
+              {deleteCat && deleteCat.itens.length > 0 && (
+                <div className="flex items-start gap-2 bg-red-50 border border-red-200 rounded-xl px-3 py-2.5 mb-3 text-xs text-red-700">
+                  <span className="mt-0.5">⚠️</span>
+                  <span>
+                    <strong>{deleteCat.itens.length} {deleteCat.itens.length === 1 ? 'item' : 'itens'}</strong> dentro desta categoria também serão excluídos permanentemente.
+                  </span>
+                </div>
+              )}
+              <div className="flex gap-3">
+                <button
+                  onClick={() => { setDeleteCatModalOpen(false); setDeleteCat(null) }}
+                  className="flex-1 py-3 border border-gray-200 text-gray-600 font-semibold rounded-xl hover:bg-gray-50 transition-colors text-sm"
+                >
+                  Cancelar
+                </button>
+                <button
+                  onClick={handleDeleteCat}
+                  disabled={!deleteCat || deletingCat}
+                  className="flex-1 py-3 bg-red-500 hover:bg-red-600 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold rounded-xl transition-colors text-sm"
+                >
+                  {deletingCat ? 'Excluindo...' : 'Excluir categoria'}
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { Prisma } from '@prisma/client'
 import { prisma } from '@/lib/prisma'
 
 export async function GET() {
@@ -43,6 +44,20 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(item, { status: 201 })
   } catch (error) {
     console.error(error)
+
+    if (error instanceof Prisma.PrismaClientKnownRequestError) {
+      // ID duplicado (sequência fora de sincronia / registro já existe)
+      if (error.code === 'P2002' && Array.isArray(error.meta?.target) && error.meta?.target.includes('id')) {
+        return NextResponse.json(
+          {
+            error: 'Já existe um item com esse identificador interno. Tente novamente em alguns segundos ou peça para resetar a sequência da tabela MenuItem.',
+            code: 'MENUITEM_ID_CONFLICT',
+          },
+          { status: 409 },
+        )
+      }
+    }
+
     return NextResponse.json({ error: 'Erro ao criar item' }, { status: 500 })
   }
 }
