@@ -268,8 +268,8 @@ export default function AdminPage() {
 
         {/* Category tabs + actions */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-4">
-          <div className="flex items-center justify-between px-4 pt-4 pb-0 gap-3 flex-wrap">
-            <div className="flex gap-2 overflow-x-auto pb-1 flex-1 min-w-0">
+          <div className="px-4 pt-4 pb-0">
+            <div className="flex gap-2 overflow-x-auto pb-1">
               {categorias.map(cat => (
                 <button
                   key={cat.id}
@@ -300,17 +300,11 @@ export default function AdminPage() {
                 <Trash2 size={14} /> Excluir categoria
               </button>
             </div>
-            <button
-              onClick={openCreate}
-              className="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold rounded-xl transition-colors shadow-sm flex-shrink-0"
-            >
-              <Plus size={16} /> Novo Item
-            </button>
           </div>
 
           {/* Search */}
-          <div className="px-4 py-3 border-t border-gray-50 mt-3">
-            <div className="relative max-w-xs">
+          <div className="px-4 py-3 border-t border-gray-50 mt-3 flex items-center justify-between gap-3 flex-wrap">
+            <div className="relative max-w-xs w-full">
               <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
@@ -320,6 +314,12 @@ export default function AdminPage() {
                 className="w-full pl-9 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-amber-300"
               />
             </div>
+            <button
+              onClick={openCreate}
+              className="flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white text-sm font-bold rounded-xl transition-colors shadow-sm"
+            >
+              <Plus size={16} /> Novo Item
+            </button>
           </div>
         </div>
 
@@ -392,8 +392,8 @@ export default function AdminPage() {
 
       {/* ── Item Modal ─────────────────────────────────── */}
       {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-end justify-center p-2 sm:p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl w-full max-w-md max-h-[88vh] overflow-y-auto">
             <div className="flex items-center justify-between p-6 pb-4 border-b border-gray-100">
               <h2 className="text-lg font-bold text-gray-800">
                 {editingItem ? 'Editar Item' : 'Novo Item'}
