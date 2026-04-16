@@ -8,7 +8,7 @@ export const runtime = 'nodejs'
 function withCors(response: NextResponse) {
   // Se quiser restringir, troque '*' pelo domínio do seu frontend
   response.headers.set('Access-Control-Allow-Origin', '*')
-  response.headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS')
+  response.headers.set('Access-Control-Allow-Methods', 'POST, OPTIONS, GET, PUT, DELETE')
   response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization')
   response.headers.set('Access-Control-Allow-Credentials', 'true')
   response.headers.set('Vary', 'Origin')
