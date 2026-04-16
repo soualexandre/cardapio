@@ -15,7 +15,7 @@ async function getCategorias() {
     })
     console.log('[Home] Categorias carregadas com sucesso', {
       totalCategorias: categorias.length,
-      totalItens: categorias.reduce((acc, cat) => acc + cat.itens.length, 0),
+      totalItens: categorias.reduce((acc: number, cat: { itens: unknown[] }) => acc + cat.itens.length, 0),
     })
     return categorias
   } catch (error) {
