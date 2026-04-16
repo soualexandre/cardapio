@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model Categoria {
+  id    String     @id
+  nome  String
+  icone String
+  ordem Int        @default(0)
+  itens MenuItem[]
+}
+
+model MenuItem {
+  id          Int       @id @default(autoincrement())
+  nome        String
+  descricao   String    @default("")
+  preco       String
+  imagem      String    @default("")
+  ordem       Int       @default(0)
+  ativo       Boolean   @default(true)
+  categoriaId String
+  categoria   Categoria @relation(fields: [categoriaId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
