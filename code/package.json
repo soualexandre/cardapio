@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "NODE_PATH=$(pwd)/node_modules next dev",
+    "build": "NODE_PATH=$(pwd)/node_modules next build",
     "start": "next start",
     "lint": "next lint",
+    "postinstall": "node -e \"const fs=require('fs'),p='./node_modules/next/dist/lib/';const c=fs.readFileSync(p+'server-external-packages.jsonc','utf-8');fs.writeFileSync(p+'server-external-packages.json',c.replace(/\\/\\/[^\\n]*/g,'').replace(/,\\s*\\]/g,']').replace(/,\\s*\\}/g,'}'));\"",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev",
@@ -19,6 +20,7 @@
   "dependencies": {
     "@prisma/client": "^6.19.3",
     "@supabase/supabase-js": "^2.103.3",
+    "@vercel/blob": "^2.3.3",
     "bcryptjs": "^3.0.3",
     "jose": "^6.2.2",
     "lucide-react": "^0.506.0",
@@ -39,6 +41,6 @@
     "prisma": "^6.19.3",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
-    "typescript": "6.0.2"
+    "typescript": "6.0.3"
   }
 }

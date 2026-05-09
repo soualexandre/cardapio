@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://festadomilhao.vercel.app"),
   title: "Festa do Milhão",
   description: "Cardápio da festa do Milhão - Festival Gastronômico Cristão em Paraíso do Tocantins",
   icons: {
